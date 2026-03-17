@@ -109,3 +109,5 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 source "$HOME/.openclaw/completions/openclaw.zsh"
 
 export UV_DEFAULT_INDEX=https://pypi.tuna.tsinghua.edu.cn/simple
+
+export PATH="$HOME/.local/bin:$PATH"
