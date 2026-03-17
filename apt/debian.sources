@@ -1,0 +1,69 @@
+# Debian APT Sources Configuration
+# Installation: sudo cp debian.sources /etc/apt/sources.list.d/
+# Then run: sudo apt update
+
+# -----------------------------------------------------------------------------
+# Tsinghua University Mirror - Main Repository (Fast for CN users)
+Types: deb deb-src
+URIs: https://mirrors.tuna.tsinghua.edu.cn/debian/
+Suites: stable
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# Tsinghua University Mirror - Updates
+Types: deb deb-src
+URIs: https://mirrors.tuna.tsinghua.edu.cn/debian/
+Suites: stable-updates
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# Tsinghua University Mirror - Security Updates
+Types: deb deb-src
+URIs: https://mirrors.tuna.tsinghua.edu.cn/debian-security/
+Suites: stable-security
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# -----------------------------------------------------------------------------
+# Aliyun Mirror - Main Repository (Fast for CN users)
+Types: deb deb-src
+URIs: https://mirrors.aliyun.com/debian/
+Suites: stable
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# Aliyun Mirror - Updates
+Types: deb deb-src
+URIs: https://mirrors.aliyun.com/debian/
+Suites: stable-updates
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# Aliyun Mirror - Security Updates
+Types: deb deb-src
+URIs: https://mirrors.aliyun.com/debian-security/
+Suites: stable-security
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# -----------------------------------------------------------------------------
+# Official Debian Mirror - Main Repository (Global CDN, fallback)
+Types: deb deb-src
+URIs: https://deb.debian.org/debian/
+Suites: stable
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# Official Debian Mirror - Updates
+Types: deb deb-src
+URIs: https://deb.debian.org/debian/
+Suites: stable-updates
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# Official Debian Mirror - Security Updates
+Types: deb deb-src
+URIs: https://deb.debian.org/debian-security/
+Suites: stable-security
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
