@@ -7,7 +7,7 @@ alias dk="docker"
 alias dkc="docker-compose"
 
 # zsh
-alias zshconfig="vim ~/.zshrc"¬
+alias zshconfig="vim ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 alias aliasconfig="vim ~/.alias"
 # common
