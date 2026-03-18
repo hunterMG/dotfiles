@@ -1,5 +1,0 @@
-Types: deb
-URIs: https://mirrors.aliyun.com/debian/
-Suites: sid
-Components: main contrib non-free non-free-firmware
-Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
