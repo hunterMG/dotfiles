@@ -1,0 +1,31 @@
+alias psh="poetry shell"
+alias pc="proxychains4"
+# docker
+alias dkps="docker ps"
+alias dkpsa="docker ps -a"
+alias dk="docker"
+alias dkc="docker-compose"
+
+# zsh
+alias zshconfig="vim ~/.zshrc"¬
+alias zshreload="source ~/.zshrc"
+alias aliasconfig="vim ~/.alias"
+# common
+alias p="python3"
+alias codei="code-insiders"
+alias tm="tmux"
+alias mkdir="mkdir -pv"
+alias ds="du -h -d 1 | sort -rh"
+alias b="brew"
+alias showpath='echo "$PATH" | tr ":" "\n"'
+alias wl="wc -l"
+alias nv="nvim"
+alias dum="du -sm * | sort -n"
+alias sctl="systemctl"
+alias unsetproxy="unset all_proxy && unset ALL_PROXY && unset http_proxy && unset https_proxy"
+
+alias ou="onedrive-uploader"
+
+alias dhexo="docker run --rm --name hexo -p 4000:4000 -v $HOME/code/blog/:/blog rammusxu/docker-hexo hexo"
+alias go="git open"
+alias s="git status"
