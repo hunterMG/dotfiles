@@ -111,3 +111,5 @@ source "$HOME/.openclaw/completions/openclaw.zsh"
 export UV_DEFAULT_INDEX=https://pypi.tuna.tsinghua.edu.cn/simple
 
 export PATH="$HOME/.local/bin:$PATH"
+export NVM_NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node
+eval $(thefuck --alias)
