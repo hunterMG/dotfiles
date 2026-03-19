@@ -1,0 +1,24 @@
+# Debian APT Sources Configuration
+# Installation: sudo cp debian.sources /etc/apt/sources.list.d/
+# Then run: sudo apt update
+
+# Aliyun Mirror - Main Repository (Fast for CN users)
+Types: deb deb-src
+URIs: https://mirrors.aliyun.com/debian/
+Suites: stable
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# Aliyun Mirror - Updates
+Types: deb deb-src
+URIs: https://mirrors.aliyun.com/debian/
+Suites: stable-updates
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# Aliyun Mirror - Security Updates
+Types: deb deb-src
+URIs: https://mirrors.aliyun.com/debian-security/
+Suites: stable-security
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg

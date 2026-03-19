@@ -1,0 +1,11 @@
+# Debian Backports Configuration
+# Installation: sudo cp debian-backports.sources /etc/apt/sources.list.d/
+# Usage: sudo apt install -t stable-backports <package-name>
+# Then run: sudo apt update
+
+# Aliyun Mirror - Backports (Fast for CN users)
+Types: deb deb-src
+URIs: https://mirrors.aliyun.com/debian/
+Suites: stable-backports
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
