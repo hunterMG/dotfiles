@@ -376,7 +376,7 @@ Next steps:
 3. Run 'nvim +PlugInstall' to install Neovim plugins.
 4. Verify zsh plugins are loaded: zsh_stats.
 5. Bring your network back if it was down.
-6. Run 'chsh -s $(command -v zsh)' to set zsh as default shell (may require logout/login).
+6. Run 'chsh -s \$(command -v zsh)' to set zsh as default shell (may require logout/login).
 7. Run 'sudo apt full-upgrade' to ensure all packages are up to date.
 
 Configuration backed up:

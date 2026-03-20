@@ -1,5 +1,17 @@
 # dotfiles
 
+## Installation
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/hunterMG/dotfiles/main/debian-setup.sh -o debian-setup.sh | bash debian-setup.sh
+```
+
+or  
+
+```bash
+curl -fsSL https://gitee.com/huntermg/dotfiles/raw/main/debian-setup.sh -o debian-setup.sh && bash debian-setup.sh
+```
+
 ## ⚠️ Warning about `stable` in [apt](./apt/)
 
 Debian's `stable` is a moving alias:
