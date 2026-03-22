@@ -105,8 +105,10 @@ fi
 export onedriveDir="$HOME/media-share/OneDrive-AdeleV"
 export PATH="$HOME/.npm-global/bin:$PATH"
 
-# OpenClaw Completion
+# OpenClaw
 source "$HOME/.openclaw/completions/openclaw.zsh"
+export NODE_COMPILE_CACHE=/var/tmp/openclaw-compile-cache
+export OPENCLAW_NO_RESPAWN=1
 
 export UV_DEFAULT_INDEX=https://pypi.tuna.tsinghua.edu.cn/simple
 
