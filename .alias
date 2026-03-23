@@ -29,3 +29,10 @@ alias ou="onedrive-uploader"
 alias dhexo="docker run --rm --name hexo -p 4000:4000 -v $HOME/code/blog/:/blog rammusxu/docker-hexo hexo"
 alias go="git open"
 alias s="git status"
+
+# openclaw
+alias occ="vim ~/.openclaw/openclaw.json"
+alias oc="openclaw"
+alias og="openclaw gateway"
+alias ost="openclaw status"
+alias ogst="openclaw gateway status"
