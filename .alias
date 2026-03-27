@@ -7,9 +7,9 @@ alias dk="docker"
 alias dkc="docker-compose"
 
 # zsh
-alias zshconfig="vim ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 alias zshreload="source ~/.zshrc"
-alias aliasconfig="vim ~/.alias"
+alias aliasconfig="nvim ~/.alias"
 # common
 alias p="python3"
 alias codei="code-insiders"
@@ -31,7 +31,7 @@ alias go="git open"
 alias s="git status"
 
 # openclaw
-alias occ="vim ~/.openclaw/openclaw.json"
+alias occ="nvim ~/.openclaw/openclaw.json"
 alias oc="openclaw"
 alias og="openclaw gateway"
 alias ost="openclaw status"
