@@ -1,6 +1,12 @@
 # dotfiles
 
-## Installation
+Dotfiles and setup scripts for a fresh Debian (>=12) installation.
+
+## ‼️ Disclaimer
+
+Use it at your own risk. Review before running.
+
+## Setup
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/hunterMG/dotfiles/main/debian-setup.sh -o debian-setup.sh | bash debian-setup.sh
@@ -21,7 +27,9 @@ Debian's `stable` is a moving alias:
 
 After a new Debian release, running:
 
-    sudo apt update && sudo apt upgrade
+```bash
+sudo apt update && sudo apt upgrade
+```
 
 may upgrade your system to the next major Debian version automatically.
 
