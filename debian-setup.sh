@@ -208,7 +208,7 @@ if ! sudo apt-get update 2>>"$LOG_FILE"; then
 fi
 success "Package lists updated"
 
-log "INFO" "Upgrading existing packages"
+log "INFO" "Preparing apt options"
 APT_OPTS=(
   -y
   -o Dpkg::Options::="--force-confdef"
@@ -219,10 +219,15 @@ apt_noninteractive() {
   sudo DEBIAN_FRONTEND=noninteractive apt-get "${APT_OPTS[@]}" "$@"
 }
 
-if ! apt_noninteractive upgrade 2>>"$LOG_FILE"; then
-    die "Failed to upgrade packages"
+if [ "${CI:-false}" = "true" ]; then
+    log "INFO" "CI detected; skipping full package upgrade to reduce memory pressure"
+else
+    log "INFO" "Upgrading existing packages"
+    if ! apt_noninteractive upgrade 2>>"$LOG_FILE"; then
+        die "Failed to upgrade packages"
+    fi
+    success "Packages upgraded"
 fi
-success "Packages upgraded"
 
 #############################################################################
 # Install System Packages
@@ -230,7 +235,7 @@ success "Packages upgraded"
 
 step "Installing system packages"
 
-sudo apt-get install -y \
+if ! apt_noninteractive install --no-install-recommends \
     git \
     curl \
     wget \
@@ -241,7 +246,9 @@ sudo apt-get install -y \
     python3-pip \
     python3-setuptools \
     pipx \
-    neovim 2>>"$LOG_FILE" || die "Failed to install system packages"
+    neovim 2>>"$LOG_FILE"; then
+    die "Failed to install system packages"
+fi
 
 log "INFO" "Removing unnecessary packages"
 sudo apt-get autoremove -y 2>>"$LOG_FILE"

@@ -1,0 +1,32 @@
+name: Test Debian Setup
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  test-debian-setup:
+    runs-on: ubuntu-24.04-arm
+    container:
+      image: arm64v8/debian:stable
+
+    steps:
+      - name: Show system architecture
+        run: uname -a
+
+      - name: Check OS
+        run: cat /etc/os-release
+
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Install prerequisites
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends sudo ca-certificates curl
+
+      - name: Run debian setup script
+        run: |
+          chmod +x ./debian-setup.sh
+          printf 'y\n' | ./debian-setup.sh
