@@ -9,9 +9,12 @@ jobs:
   test-debian-setup:
     runs-on: ubuntu-latest
     container:
-      image: debian:stable
+      image: arm64v8/debian:stable
 
     steps:
+      - name: Check OS
+        run: cat /etc/os-release
+
       - name: Checkout repository
         uses: actions/checkout@v6
 
