@@ -186,3 +186,18 @@ colorscheme solarized8
 " ========== Lua Config ==========
 " 加载 Lua 模块 (相当于 require("plugins.onedarkpro"))
 " lua require("plugins.onedarkpro")
+
+" iterm2 ssh clipboard (https://gitlab.com/gnachman/iterm2/-/work_items/11723)
+lua <<EOF
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
+}
+EOF
