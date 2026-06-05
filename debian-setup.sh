@@ -357,6 +357,11 @@ clone_if_missing \
     "$zsh_custom/plugins/zsh-syntax-highlighting" \
     "zsh-syntax-highlighting"
 
+clone_if_missing \
+    "https://gitee.com/huntermg/zsh-completions.git" \
+    "$zsh_custom/plugins/zsh-completions" \
+    "zsh-completions"
+
 # Ensure git directory exists
 mkdir -p "$HOME/git"
 
