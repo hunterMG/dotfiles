@@ -72,7 +72,11 @@ ZSH_THEME="amuse"
 plugins=(git zsh-autosuggestions docker docker-compose zsh-syntax-highlighting)
 eval "$(lua $HOME/git/z.lua/z.lua --init zsh)" 
 
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+fpath=(
+  "$HOME/.zsh_completions"
+  "${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src"
+  "$fpath[@]"
+)
 autoload -U compinit && compinit
 source "$ZSH/oh-my-zsh.sh"
 
