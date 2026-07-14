@@ -246,6 +246,7 @@ if ! apt_noninteractive install --no-install-recommends \
     python3-pip \
     python3-setuptools \
     pipx \
+    trash-cli \
     neovim 2>>"$LOG_FILE"; then
     die "Failed to install system packages"
 fi
