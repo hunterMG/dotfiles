@@ -301,6 +301,11 @@ download_file \
     "$HOME/.config/nvim/init.vim" \
     "Neovim init.vim"
 
+download_file \
+    "https://gitee.com/huntermg/dotfiles/raw/main/nvim/lua/plugins/onedarkpro.lua" \
+    "$HOME/.config/nvim/lua/plugins/onedarkpro.lua" \
+    "Neovim onedarkpro.lua"
+
 success "Neovim configured"
 
 #############################################################################

@@ -182,10 +182,10 @@ Plug 'olimorris/onedarkpro.nvim'
 Plug 'lifepillar/vim-solarized8', { 'branch': 'neovim' }
 call plug#end()
 
-colorscheme solarized8
+" colorscheme solarized8
 " ========== Lua Config ==========
 " 加载 Lua 模块 (相当于 require("plugins.onedarkpro"))
-" lua require("plugins.onedarkpro")
+lua require("plugins.onedarkpro")
 
 " iterm2 ssh clipboard (https://gitlab.com/gnachman/iterm2/-/work_items/11723)
 lua <<EOF
