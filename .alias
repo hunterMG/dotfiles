@@ -18,6 +18,8 @@ alias tm="tmux"
 alias mkdir="mkdir -pv"
 alias ds="du -h -d 1 | sort -rh"
 alias b="brew"
+alias bic="brew install --cask"
+alias bs="brew search"
 alias showpath='echo "$PATH" | tr ":" "\n"'
 alias wl="wc -l"
 alias nv="nvim"
@@ -38,3 +40,6 @@ alias oc="openclaw"
 alias og="openclaw gateway"
 alias ost="openclaw status"
 alias ogst="openclaw gateway status"
+
+# hermes
+alias violin="hermes -p violin"

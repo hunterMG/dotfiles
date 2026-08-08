@@ -168,7 +168,31 @@ if ! confirm "Are you sure you want to proceed?"; then
     exit 0
 fi
 
+INSTALL_HOMEBREW=false
+if confirm "Do you want to install Homebrew?"; then
+    INSTALL_HOMEBREW=true
+fi
+
 success "Proceeding with setup"
+
+# Prime sudo and keep its credential alive in the background so long-running
+# steps (e.g. the Homebrew installer) never block on a password prompt.
+step "Preparing sudo"
+PARENT_PID=$$
+sudo -v
+(
+    while true; do
+        sleep 30
+        sudo -v
+        kill -0 "$PARENT_PID" 2>/dev/null || exit 0
+    done
+) >/dev/null 2>&1 &
+SUDO_KEEPER_PID=$!
+
+cleanup() {
+    kill "$SUDO_KEEPER_PID" 2>/dev/null || true
+}
+trap cleanup EXIT
 
 #############################################################################
 # Configure Package Manager
@@ -255,6 +279,24 @@ log "INFO" "Removing unnecessary packages"
 sudo apt-get autoremove -y 2>>"$LOG_FILE"
 
 success "System packages installed"
+
+#############################################################################
+# Install Homebrew
+#############################################################################
+
+step "Installing Homebrew"
+
+if [ "$INSTALL_HOMEBREW" = true ]; then
+    log "INFO" "Installing Homebrew"
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    if ! command -v brew >/dev/null 2>&1; then
+        die "Failed to install Homebrew"
+    fi
+    success "Homebrew installed"
+else
+    log "INFO" "Skipping Homebrew installation"
+fi
 
 #############################################################################
 # Configure Python Package Manager
